@@ -21,6 +21,7 @@
  */
 typedef struct node {
 	char *DNSname;
+    int count;
 	struct node *next;
 } node;
 
@@ -106,35 +107,13 @@ add_front(node *front, char *DNSname)
 }
 
 /*
- *
- * hash
- *
- * Arguments: a null terminated string
- *
- * Operation: calculates a hash value for the string
- *
- * returns:   the hash value
- */
-unsigned long
-hash(char *str)
-{
-	unsigned long hash = 0;
-    unsigned int c;
-
-    while ((c = (unsigned char)*str++) != '\0')
-        hash = c + (hash << 6) + (hash << 16) - hash;
-
-	return hash;
-}
-
-/*
  * dostats for debug 
  *
  * Arguments: pointer to a hash table; number of elements
  *
  * Operation: Walks the hash table chain by chain
  * 	      1. Calculates the number of nodes in the table
- *	      2. The longest and shortest chains 
+ *	      2. The maximum and minimum hits 
  *	      3. prints this to stderr
  */      
 void
@@ -143,8 +122,8 @@ dostats(node **htable, unsigned long tabsz)
 // your code here put your variables into the fprintf below
 	// fprintf(stderr, "Table size: %lu\n",
 	// fprintf(stderr, "Total entries: %lu\n",
-	// fprintf(stderr, "Longest chain: %lu\n",
-	// fprintf(stderr, "Shortest chain: %lu\n",
+	// fprintf(stderr, "Maximum hits: %lu\n",
+	// fprintf(stderr, "Minimum hits: %lu\n",
 }
 
 /*
@@ -256,7 +235,4 @@ deleteTable(node **htable, unsigned long tabsz)
 {
 // your code here
 }
-
-
-
 

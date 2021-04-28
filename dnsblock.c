@@ -113,7 +113,8 @@ add_front(node *front, char *DNSname)
  *
  * Operation: Walks the hash table chain by chain
  * 	      1. Calculates the number of nodes in the table
- *	      2. The maximum and minimum hits 
+ *	      2. The longest and shortest chain
+ *	      3. The maximum block count
  *	      3. prints this to stderr
  */      
 void
@@ -122,8 +123,9 @@ dostats(node **htable, unsigned long tabsz)
 // your code here put your variables into the fprintf below
 	// fprintf(stderr, "Table size: %lu\n",
 	// fprintf(stderr, "Total entries: %lu\n",
-	// fprintf(stderr, "Maximum hits: %lu\n",
-	// fprintf(stderr, "Minimum hits: %lu\n",
+	// fprintf(stderr, "Longest chain: %lu\n",
+	// fprintf(stderr, "Shortest chain: %lu\n",
+    // fprintf(stderr, "Maximum block count: %lu\n",
 }
 
 /*

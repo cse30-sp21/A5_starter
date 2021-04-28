@@ -236,3 +236,25 @@ deleteTable(node **htable, unsigned long tabsz)
 // your code here
 }
 
+/*
+ *
+ * hash
+ *
+ * Arguments: a null terminated string
+ *
+ * Operation: calculates a hash value for the string
+ *
+ * returns:   the hash value
+ */
+unsigned long
+hash(char *str)
+{
+    unsigned long hash = 0;
+    unsigned int c;
+
+    while ((c = (unsigned char)*str++) != '\0')
+        hash = hashFun((unsigned long)c, hash);
+
+    return hash;
+}
+

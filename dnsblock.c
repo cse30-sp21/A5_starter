@@ -31,6 +31,7 @@ typedef struct node {
 extern node *dns_lookup(node *front, char *DNSname);
 extern node *add_front(node *front, char *DNSname);
 extern unsigned long hash(char *str);
+extern unsigned long hashFun(unsigned long c, unsigned long hash);
 extern void dostats(node **htable, unsigned long tabsz);
 extern int parseopts(int argc, char *argv[], char **filename, unsigned long *tabsz, int *stats);
 extern int loadtable(node **htable, unsigned long tabsz, char *blockname);

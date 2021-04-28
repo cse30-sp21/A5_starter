@@ -13,7 +13,7 @@
 /////////////////////////////////////////////////////////
 .type   hashFun, %function // define as a function
 .global hashFun            // export function name
-.equ    HF_OFF_HF, 28      // (regs - 1) * 4
+.equ    FP_OFFSET, 28      // (regs - 1) * 4
 /////////////////////////////////////////////////////////
 
 // put any .equ for hashFun here - delete this line
@@ -32,7 +32,7 @@ hashFun:
 
     /////////////////////////////////////////////////////////
     // do not edit the epilogue below
-    sub     sp, fp, HF_OFF_HF  // restore sp
+    sub     sp, fp, FP_OFFSET   // restore sp
     pop     {r4-r9,fp, lr}      // restore saved registers
     bx      lr                  // function return 
     .size   hashFun,(. - hashFun)

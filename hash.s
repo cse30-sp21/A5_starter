@@ -22,7 +22,7 @@
 
 hashFun:
     push    {r4-r9, fp, lr}     // use r4-r9 protected regs
-    add     fp, sp, HF_OFF_HF  // locate our frame pointer
+    add     fp, sp, FP_OFFSET   // locate our frame pointer
     // do not edit the prologue above
     // You can use temporary r0-r3 and preserved r4-r9
     // Store return value (results) in r0

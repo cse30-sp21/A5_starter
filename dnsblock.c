@@ -122,11 +122,11 @@ void
 dostats(node **htable, unsigned long tabsz)
 {
 // your code here put your variables into the fprintf below
-	// fprintf(stderr, "Table size: %lu\n",
-	// fprintf(stderr, "Total entries: %lu\n",
-	// fprintf(stderr, "Longest chain: %lu\n",
-	// fprintf(stderr, "Shortest chain: %lu\n",
-    // fprintf(stderr, "Maximum block count: %lu\n",
+	// fprintf(stdout, "Table size: %lu\n",
+	// fprintf(stdout, "Total entries: %lu\n",
+	// fprintf(stdout, "Longest chain: %lu\n",
+	// fprintf(stdout, "Shortest chain: %lu\n",
+    // fprintf(stdout, "Maximum block count: %lu\n",
 }
 
 /*

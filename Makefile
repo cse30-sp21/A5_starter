@@ -6,7 +6,7 @@ dnsblock: $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o dnsblock
 
 dnsblock.o: dnsblock.c
-	$(CC) $(CFLAGS) dnsblock.c
+	$(CC) -c $(CFLAGS) dnsblock.c
 hash.o: hash.s
 	$(CC) -c $(CFLAGS) -gstabs+ hash.s
 

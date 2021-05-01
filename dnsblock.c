@@ -67,11 +67,11 @@ main(int argc, char *argv[])
 	if (loadtable(htable, tabsz, blockname))
 		return EXIT_FAILURE;
 
-	if (stats)
-		dostats(htable, tabsz);
-
 	querytable(htable, tabsz);
 	
+    if (stats)
+		dostats(htable, tabsz);
+
 	deleteTable(htable, tabsz);
 
 	return EXIT_SUCCESS;

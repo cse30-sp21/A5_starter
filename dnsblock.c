@@ -116,7 +116,7 @@ add_front(node *front, char *DNSname)
  * 	      1. Calculates the number of nodes in the table
  *	      2. The longest and shortest chain
  *	      3. The maximum block count
- *	      3. prints this to stderr
+ *	      3. prints this to stdout
  */      
 void
 dostats(node **htable, unsigned long tabsz)

@@ -255,9 +255,17 @@ hash(char *str)
     unsigned long hash = 0;
     unsigned int c;
 
+#ifdef C_HASH
+    while ((c = (unsigned char)*str++) != '\0')
+      hash = c + (hash << 6) + (hash << 16) - hash;
+#else
     while ((c = (unsigned char)*str++) != '\0')
         hash = hashFun((unsigned long)c, hash);
 
+#endif
+
+
     return hash;
 }
+
 

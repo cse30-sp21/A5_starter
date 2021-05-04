@@ -2,6 +2,9 @@ CC = gcc
 CFLAGS = $(OPTS) -Wall -g -O0 --std=gnu99
 OBJS = dnsblock.o hash.o
 
+dnsblock: $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o dnsblock
+
 dnsblock_c: dnsblock_c.o
 	$(CC) $(CFLAGS) dnsblock_c.o -o dnsblock_c
 
@@ -15,4 +18,4 @@ hash.o: hash.s
 	$(CC) -c $(CFLAGS) -gstabs+ hash.s
 
 clean:
-	rm -f dnsblock $(OBJS)
+	rm -f dnsblock_c dnsblock_c.o dnsblock $(OBJS)

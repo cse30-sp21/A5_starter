@@ -8,6 +8,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <errno.h>
+#include <stdint.h>
 
 
 /*
@@ -252,7 +253,7 @@ deleteTable(node **htable, unsigned long tabsz)
 unsigned long
 hash(char *str)
 {
-    unsigned long hash = 0;
+    uint32_t hash = 0;
     unsigned int c;
 
 #ifdef C_HASH
@@ -260,7 +261,7 @@ hash(char *str)
       hash = c + (hash << 6) + (hash << 16) - hash;
 #else
     while ((c = (unsigned char)*str++) != '\0')
-        hash = hashFun((unsigned long)c, hash);
+        hash = hashFun((uint32_t)c, hash);
 
 #endif
 

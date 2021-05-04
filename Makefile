@@ -3,7 +3,7 @@ CFLAGS += -Wall -g -O0 --std=gnu99
 OBJS = dnsblock_c.o dnsblock.o hash.o
 
 dnsblock_c: dnsblock_c.o
-	$(CC) $(CFLAGS) -DC_HASH dnsblock.o -o dnsblock_c
+	$(CC) $(CFLAGS) -DC_HASH dnsblock_c.o -o dnsblock_c
 
 dnsblock: $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o dnsblock
